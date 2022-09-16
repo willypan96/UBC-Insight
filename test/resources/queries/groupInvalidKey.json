@@ -1,0 +1,27 @@
+{
+	"title": "Group invalid key",
+	"input": {
+		"WHERE": {},
+		"OPTIONS": {
+			"COLUMNS": [
+				"rooms_shortname",
+				"maxSeats"
+			],
+			"ORDER": "maxSeats"
+		},
+		"TRANSFORMATIONS": {
+			"GROUP": [
+				"rooooooooooms"
+			],
+			"APPLY": [
+				{
+					"maxSeats": {
+						"MAX": "rooms_seats"
+					}
+				}
+			]
+		}
+	},
+	"errorExpected": true,
+	"with": "InsightError"
+}

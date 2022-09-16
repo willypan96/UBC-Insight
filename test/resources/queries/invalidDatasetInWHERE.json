@@ -1,0 +1,24 @@
+{
+    "title": "Invalid Dataset in WHERE",
+    "input": {
+       "WHERE":{
+          "GT":{
+             "courses1_avg":97
+          }
+       },
+   
+       "OPTIONS":{
+          "COLUMNS":[
+             "courses_dept",
+             "courses_avg"
+          ],
+   
+          "ORDER":"courses_avg"
+       }    
+    },
+    "errorExpected": true,
+    "with": "InsightError"
+
+}
+    
+ 

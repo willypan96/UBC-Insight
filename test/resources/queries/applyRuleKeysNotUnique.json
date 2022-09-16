@@ -1,0 +1,46 @@
+{
+	"title": "Apply rule keys not unique",
+	"input": {
+		"WHERE": {
+			"AND": [
+				{
+					"IS": {
+						"rooms_furniture": "*Tables*"
+					}
+				}
+			]
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"rooms_shortname",
+				"maxSeats",
+				"avgSeats"
+			],
+			"ORDER": {
+				"dir": "DOWN",
+				"keys": [
+					"maxSeats"
+				]
+			}
+		},
+		"TRANSFORMATIONS": {
+			"GROUP": [
+				"rooms_shortname"
+			],
+			"APPLY": [
+				{
+					"maxSeats": {
+						"MAX": "rooms_seats"
+					}
+				},
+				{
+					"maxSeats": {
+						"AVG": "rooms_seats"
+					}
+				}
+			]
+		}
+	},
+	"errorExpected": true,
+	"with": "InsightError"
+}

@@ -1,0 +1,41 @@
+{
+    "title": "Logic Single AND and Single OR",
+    "input": {
+     "WHERE":{
+        "AND":[
+           {
+              "OR":[
+                 {
+                    "IS":{
+                       "courses_dept":"cpsc"
+                    }
+                 },
+ 
+                 {
+                    "IS":{
+                       "courses_dept":"math"
+                    }
+                 }
+              ]
+           },
+ 
+           {
+              "GT":{
+                 "courses_fail":150
+              }
+           }
+        ]
+     },
+ 
+     "OPTIONS":{
+        "COLUMNS":[
+           "courses_dept",
+           "courses_id",
+           "courses_avg"
+        ],
+        "ORDER":"courses_avg" 
+     }
+    },
+     "errorExpected": false,
+     "with":[{"courses_dept":"math","courses_id":"105","courses_avg":62.88},{"courses_dept":"math","courses_id":"101","courses_avg":63.51},{"courses_dept":"math","courses_id":"101","courses_avg":64.55},{"courses_dept":"math","courses_id":"101","courses_avg":65.21},{"courses_dept":"math","courses_id":"101","courses_avg":65.38},{"courses_dept":"math","courses_id":"101","courses_avg":65.99},{"courses_dept":"math","courses_id":"101","courses_avg":66.12},{"courses_dept":"math","courses_id":"101","courses_avg":66.28},{"courses_dept":"math","courses_id":"101","courses_avg":66.31},{"courses_dept":"cpsc","courses_id":"110","courses_avg":72.28},{"courses_dept":"cpsc","courses_id":"110","courses_avg":73.25}]     
+ } 

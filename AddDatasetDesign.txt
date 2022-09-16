@@ -1,0 +1,44 @@
+InsightDataset
+- id:
+- kind:
+- numRows:
+- courseSections (Array<CourseSection>)
+
+
+CourseSection
+- tier_eighty_five: 8,
+- tier_ninety: 10,
+- Title: "intr sftwr eng",
+- Section: "911",
+- Detail: "",
+- tier_seventy_two: 3,
+- Other": 0,
+- Low": 45,
+- tier_sixty_four: 1,
+- id: 25818,
+- tier_sixty_eight: 1,
+- tier_zero: 0,
+- tier_seventy_six: 6,
+- tier_thirty: 0,
+- tier_fifty: 0,
+- Professor: "allen, meghan",
+- Audit: 0,
+- tier_g_fifty: 1,
+- tier_forty: 1,
+- Withdrew: 0,
+- Year: "2010",
+- tier_twenty: 0,
+- Stddev: 11.03,
+- Enrolled: 32,
+- tier_fifty_five: 0,
+- tier_eighty: 1,
+- tier_sixty: 1,
+- tier_ten: 0,
+- High: 94,
+- Course: "310",
+- Session: "s",
+- Pass: 31,
+- Fail: 1,
+- Avg": 81.88,
+- Campus": "ubc",
+- Subject": "cpsc"

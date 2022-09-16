@@ -1,0 +1,65 @@
+transformation tests:
+- no transformations (pass) - DONE
+- transformations length !== 2 (fail) - DONE
+- transformations length === 2, but incorrect keys (fail) - DONE
+- all column keys are in group or applykeys (pass) - DONE
+- not all column keys are in group or applykeys (fail) - DONE
+
+	group tests:
+	- group invalid type - DONE
+	- group 0 keys (fail) - DONE
+	- group 1 valid key (pass) - DONE
+	- group 1 invalid key (fail) - DONE
+	- group 2 valid keys (pass) - DONE
+	- group 2 keys, 1 valid 1 invalid (fail) - DONE
+	- group 3+ keys (pass) - DONE
+
+	apply tests:
+	- invalid type (fail) - DONE
+	- 0 APPLYRULE's (fail) - DONE
+	- 1 APPLYRULE's (pass) - DONE
+	- 2 APPLYRULE's (pass) - DONE
+	- 3+ APPLYRULE's (pass) - DONE
+
+		applyrule tests:
+		- keys.length !== 1 (fail) - DONE
+		- apply key has underscore (fail) - DONE
+		- applykeys are unique (pass) - DONE
+		- applykeys are not unique (fail) - DONE
+
+			applytoken tests:
+			- invalid applytoken (fail) - DONE
+			- invalid key (fail) - DONE
+			- valid (pass) - DONE
+			- max/min/avg/sum applied on numeric (pass) - DONE
+			- max/min/avg/sum applied on non-numeric (fail) - DONE
+			- count applied on numeric (pass) - DONE
+			- count applied on non-numeric (pass) - DONE
+
+sort tests:
+- order is object:
+	- keys.length !== 2 (fail) - DONE
+	- key[0] !== "dir" (fail) - DONE
+	- key[1] !== "keys" (fail) - DONE
+	- keys reversed - DONE
+
+	dir tests:
+		- order.dir is invalid (fail) - DONE
+		- order.dir is valid (pass) - DONE
+
+	keys tests:
+		- keys not string[] (fail) - DONE
+		- keys.length === 0 (fail) - DONE
+		- keys.length === 1 (pass) - DONE
+		- keys.length === 2 (pass) - DONE
+		- keys.length === 3+ (pass) - DONE
+		- all keys are in column (pass) - DONE
+		- not all keys are in column (fail) - DONE
+
+		anykey tests:
+			- anykey is key (pass) - DONE
+			- anykey is applykey (pass) - DONE
+			- anykey is neither (fail) - DONE
+	
+columns test:
+	 - new keys (pass) - DONE

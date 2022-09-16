@@ -1,0 +1,34 @@
+{
+	"title": "Sort order object keys invalid type",
+	"input": {
+		"WHERE": {
+			"IS": {
+				"courses_dept": "*sc"
+			}
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"courses_dept",
+				"overallAvg"
+			],
+			"ORDER": {
+				"keys": "overallAvg",
+				"dir": "UP"
+			}
+		},
+		"TRANSFORMATIONS": {
+			"GROUP": [
+				"courses_dept"
+			],
+			"APPLY": [
+				{
+					"overallAvg": {
+						"AVG": "courses_avg"
+					}
+				}
+			]
+		}
+	},
+	"errorExpected": true,
+	"with": "InsightError"
+}

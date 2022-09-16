@@ -1,0 +1,49 @@
+{
+    "title": "Logic Single AND and Single OR",
+    "input": {
+      "WHERE": {
+        "OR":[
+            {
+               "AND":[
+                  {
+                     "GT":{
+                        "courses_avg":94
+                     }
+                  },
+  
+                  {
+                     "IS":{
+                        "courses_dept":"cpsc"
+                     }
+                  }
+               ]
+            },
+            {
+               "AND":[
+                  {
+                     "GT":{
+                        "courses_avg":85
+                     }
+                  },
+  
+                  {
+                     "IS":{
+                        "courses_dept":"cpen"
+                     }
+                  }
+               ]
+            }
+         ]
+      },
+  
+      "OPTIONS": {
+        "COLUMNS": [
+          "courses_dept",
+          "courses_avg"
+        ],
+        "ORDER": "courses_avg"
+      }
+    },
+    "errorExpected": false,
+    "with":[{"courses_dept":"cpen","courses_avg":85.92},{"courses_dept":"cpen","courses_avg":85.92},{"courses_dept":"cpen","courses_avg":86.32},{"courses_dept":"cpen","courses_avg":86.32},{"courses_dept":"cpen","courses_avg":86.9},{"courses_dept":"cpen","courses_avg":86.9},{"courses_dept":"cpsc","courses_avg":94.5},{"courses_dept":"cpsc","courses_avg":94.5},{"courses_dept":"cpsc","courses_avg":95},{"courses_dept":"cpsc","courses_avg":95}]
+  }

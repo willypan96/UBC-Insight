@@ -1,0 +1,29 @@
+{
+    "title": "courses_year 1900",
+    "input": {
+        "WHERE": {
+            "AND": [
+                {
+                    "EQ": {
+                        "courses_year": 1900
+                    }
+                },
+                {
+                    "GT": {
+                        "courses_avg": 99
+                    }
+                }
+            ]
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept",
+                "courses_id",
+                "courses_year"
+            ],
+            "ORDER": "courses_year"
+        }
+    },
+    "expectError": false,
+    "with":[{"courses_dept":"math","courses_id":"527","courses_year":1900}]
+}

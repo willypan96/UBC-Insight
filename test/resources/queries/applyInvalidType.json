@@ -1,0 +1,29 @@
+{
+	"title": "Apply invalid type",
+	"input": {
+		"WHERE": {
+			"GT": {
+				"rooms_seats": 200
+			}
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"rooms_fullname",
+				"rooms_shortname",
+				"rooms_furniture",
+				"maxSeats"
+			],
+			"ORDER": "maxSeats"
+		},
+		"TRANSFORMATIONS": {
+			"GROUP": [
+				"rooms_fullname",
+				"rooms_shortname",
+				"rooms_furniture"
+			],
+			"APPLY": "maxSeats"
+		}
+	},
+	"errorExpected": true,
+	"with": "InsightError"
+}

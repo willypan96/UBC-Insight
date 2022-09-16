@@ -1,0 +1,40 @@
+{
+	"title": "Apply token non-numeric field on numeric apply",
+	"input": {
+		"WHERE": {
+			"AND": [
+				{
+					"IS": {
+						"rooms_furniture": "*Tables*"
+					}
+				}
+			]
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"rooms_shortname",
+				"maxFullname"
+			],
+			"ORDER": {
+				"dir": "DOWN",
+				"keys": [
+					"maxFullname"
+				]
+			}
+		},
+		"TRANSFORMATIONS": {
+			"GROUP": [
+				"rooms_shortname"
+			],
+			"APPLY": [
+				{
+					"maxFullname": {
+						"MAX": "rooms_fullname"
+					}
+				}
+			]
+		}
+	},
+	"errorExpected": true,
+	"with": "InsightError"
+}

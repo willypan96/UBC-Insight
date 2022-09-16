@@ -1,0 +1,25 @@
+{
+    "title": "Asteriks in Middle of String",
+    "input": {
+       "WHERE":{
+          "IS":{
+             "courses_dept": "cp*sc"
+          }
+       },
+   
+       "OPTIONS":{
+          "COLUMNS":[
+             "courses_dept",
+             "courses_id",
+             "courses_avg"
+          ],
+   
+          "ORDER":"courses_avg"
+       }
+    },
+    
+    "errorExpected": true,
+    "with": "InsightError"
+ }
+    
+ 

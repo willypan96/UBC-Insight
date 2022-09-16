@@ -1,0 +1,9 @@
+{
+    "title": "absolutely nothing",
+    "input": {
+        
+    },
+
+    "errorExpected": true,
+    "with": "InsightError"
+}

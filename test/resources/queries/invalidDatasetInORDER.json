@@ -1,0 +1,28 @@
+{
+    "title": "Invalid Dataset in ORDER",
+    "input": {
+       "WHERE":{
+          "GT":{
+             "courses_avg":97
+          }
+       },
+   
+       "OPTIONS":{
+          "COLUMNS":[
+             "courses_dept",
+             "courses_avg"
+          ],
+   
+          "ORDER":[
+            "courses_avg", 
+            "cpsc310_avg"
+        ]
+       }    
+    },
+    
+    "errorExpected": true,
+    "with": "InsightError"
+
+}
+    
+ 

@@ -1,0 +1,25 @@
+{
+    "title": "Invalid Dataset in COLUMNS",
+    "input": {
+       "WHERE":{
+          "GT":{
+             "courses_avg":97
+          }
+       },
+   
+       "OPTIONS":{
+          "COLUMNS":[
+             "courses_dept",
+             "courses_avg",
+             "cpsc310_avg"
+          ],
+   
+          "ORDER":"courses_avg"
+       }    
+    },
+    "errorExpected": true,
+    "with": "InsightError"
+
+}
+    
+ 

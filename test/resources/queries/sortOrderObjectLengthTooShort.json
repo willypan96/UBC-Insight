@@ -1,0 +1,32 @@
+{
+	"title": "Sort order object length too short",
+	"input": {
+		"WHERE": {},
+		"OPTIONS": {
+			"COLUMNS": [
+				"courses_title",
+				"overallAvg"
+			],
+			"ORDER": {
+				"keys": [
+					"overallAvg",
+					"courses_title"
+				]
+			}
+		},
+		"TRANSFORMATIONS": {
+			"GROUP": [
+				"courses_title"
+			],
+			"APPLY": [
+				{
+					"overallAvg": {
+						"AVG": "courses_avg"
+					}
+				}
+			]
+		}
+	},
+	"errorExpected": true,
+	"with": "InsightError"
+}

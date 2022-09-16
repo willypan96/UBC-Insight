@@ -1,0 +1,21 @@
+{
+	"title": "Transformations Invalid Length",
+	"input": {
+		"WHERE": {
+			"GT": {
+				 "courses_avg":99
+			}
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				 "courses_id"
+			],
+			"ORDER":"courses_avg"
+		},
+		"TRANSFORMATIONS": {
+		  "GROUP": ["rooms_shortname"]
+		}
+	},
+	"errorExpected": true,
+	"with": "InsightError"
+}

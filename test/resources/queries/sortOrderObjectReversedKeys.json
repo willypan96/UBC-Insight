@@ -1,0 +1,37 @@
+{
+	"title": "Sort order object reversed keys",
+	"input": {
+		"WHERE": {
+			"IS": {
+				"courses_dept": "*sc"
+			}
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"courses_dept",
+				"overallAvg"
+			],
+			"ORDER": {
+				"keys": [
+					"overallAvg",
+					"courses_dept"
+				],
+				"dir": "UP"
+			}
+		},
+		"TRANSFORMATIONS": {
+			"GROUP": [
+				"courses_dept"
+			],
+			"APPLY": [
+				{
+					"overallAvg": {
+						"AVG": "courses_avg"
+					}
+				}
+			]
+		}
+	},
+	"errorExpected": false,
+	"with": [{"courses_dept":"apsc","overallAvg":76.62},{"courses_dept":"cpsc","overallAvg":77.58},{"courses_dept":"eosc","overallAvg":77.74},{"courses_dept":"musc","overallAvg":80},{"courses_dept":"basc","overallAvg":81.25},{"courses_dept":"atsc","overallAvg":81.26},{"courses_dept":"nrsc","overallAvg":84.2},{"courses_dept":"rhsc","overallAvg":85.99}]
+}

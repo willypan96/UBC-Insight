@@ -1,0 +1,34 @@
+{
+	"title": "Sort order object keys empty",
+	"input": {
+		"WHERE": {
+			"IS": {
+				"courses_dept": "*sc"
+			}
+		},
+		"OPTIONS": {
+			"COLUMNS": [],
+			"ORDER": {
+				"keys": [
+					"overallAvg",
+					"courses_dept"
+				],
+				"dir": "UP"
+			}
+		},
+		"TRANSFORMATIONS": {
+			"GROUP": [
+				"courses_dept"
+			],
+			"APPLY": [
+				{
+					"overallAvg": {
+						"AVG": "courses_avg"
+					}
+				}
+			]
+		}
+	},
+	"errorExpected": true,
+	"with": "InsightError" 
+}

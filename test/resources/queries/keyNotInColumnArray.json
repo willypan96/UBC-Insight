@@ -1,0 +1,23 @@
+{
+    "title": "key Not In Column Array",
+    "input": {
+       "WHERE":{
+          "GT":{
+             "courses_avg":97
+          }
+       },
+   
+       "OPTIONS":{
+          "COLUMNS":[
+             "courses_dept"
+          ],
+   
+          "ORDER":"courses_avg"
+       }    
+    },
+    "errorExpected": true,
+    "with": "InsightError"
+
+}
+    
+ 

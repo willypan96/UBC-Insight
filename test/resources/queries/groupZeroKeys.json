@@ -1,0 +1,25 @@
+{
+	"title": "Group zero keys",
+	"input": {
+		"WHERE": {},
+		"OPTIONS": {
+			"COLUMNS": [
+				"rooms_shortname",
+				"maxSeats"
+			],
+			"ORDER": "maxSeats"
+		},
+		"TRANSFORMATIONS": {
+			"GROUP": [],
+			"APPLY": [
+				{
+					"maxSeats": {
+						"MAX": "rooms_seats"
+					}
+				}
+			]
+		}
+	},
+	"errorExpected": true,
+	"with": "InsightError"
+}

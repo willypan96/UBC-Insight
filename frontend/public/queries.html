@@ -1,0 +1,253 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css" media="screen"/>
+	<title>UBC Insight | Queries</title>
+</head>
+<body>
+	<div class="navbar">
+		<a href="index.html">UBC Insight</a>
+		<a href="datasets.html">Datasets</a>
+		<a class="active" href="queries.html">Queries</a>
+	</div> 
+
+	<h1>Perform Queries</h1>
+	<p>Follow the steps below to begin querying data.</p>
+
+	<div class="dataset-div">
+		<h2>1. Choose Dataset</h2>
+		<p>Select the dataset that you want to perform your query on.</p>
+		<div class="dataset-box">
+			<div id="query-select-id-div" class="dataset-content-div">
+			  <div class="dropdown">
+					<button id="query-select-id-button" class="button">Select a dataset ▼</button>
+					<div id="query-select-id-dropdown-content" class="dropdown-content"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="dataset-div">
+		<h2>2. Choose Filters</h2>
+		<p>First select options to filter for the data you're looking for. </p>
+		<div class="dataset-box">
+			<div id="add-dataset-input-id-div" class="dataset-content-div">
+				<h3>Add Filters</h3>
+				Select filters from the drop-down menu to add to your query.
+				You will be greeted with a prompt to enter filter information.
+				They must obey the following properties:
+				<ol>
+					<li>The ID must correspond to a dataset already in the system.</li>
+					<li>The key must be one of the keys listed.</li>
+					<li>The type of data must make sense, e.g. numbers for averages, and text for addresses.</li>
+				</ol>
+			  <div class="dropdown">
+					<button class="button">Add a filter ▼</button>
+					<div class="dropdown-content">
+						<a id="query-filter-gt">Greater Than</a>
+						<a id="query-filter-eq">Equal To (Numeric)</a>
+						<a id="query-filter-lt">Less Than</a>
+						<a id="query-filter-is">Is (Text)</a>
+						<a href="#">Not (under construction)</a>
+						<a href="#">And (under construction)</a>
+						<a href="#">Or (under construction)</a>
+					</div>
+				</div> 
+			</div>
+			<div id="add-dataset-input-kind-div" class="dataset-content-div">
+				<h3>My Filters</h3>
+				Here is a list of filters that you have created.
+				It is defaulted to AND for now.
+				<br>
+				<br>
+				<table id="list-filters-table">
+					<thead> <tr>
+							<th>Filter Type</th>
+							<th>Query Key</th>
+							<th>Value of Comparison</th>
+						</tr></thead>
+					<tbody id="list-filters-table-tbody">
+					</tbody>
+				</table>
+				<br>
+					<button id="query-clear-filters-button" class="button">Clear Filters</button>
+				<br>
+			</div>
+		</div>
+	</div>
+
+	<div class="dataset-div">
+		<h2>3. Apply Transformations (OPTIONAL)</h2>
+		<p>With your data, perform a wide array of calculations.</p>
+		<div class="dataset-box">
+			<div id="add-dataset-input-id-div" class="dataset-content-div">
+				<h3>Select Groups</h3>
+				Groups are how you can specify which aggregation actions to apply to the query response.
+				Specifying multiple group keys indicate that each group has the same combination of 
+				values of the specified keys.
+				Group keys must obey the following conditions.
+				<ol>
+					<li>The key must be a query key. You can't make up a key you know what I'm saying.</li>
+					<li>For example, "avg".</li>
+				</ol>
+				<input type="text" placeholder="Enter group fields" id="input-add-group-key">
+			</div>
+			<div id="add-dataset-input-id-div" class="dataset-content-div">
+				<h3>Select Aggregations</h3>
+				Aggregations are actions performed on each of the groups to aggregate the data,
+				in order to obtain a value summarizing the group.
+				<ol>
+					<li>The new key must not have an underscore ("_").</li>
+				</ol>
+			  <div class="dropdown">
+					<button class="button">Add an aggregator ▼</button>
+					<div class="dropdown-content">
+						<a id="query-apply-max">Maximum value</a>
+						<a id="query-apply-min">Minimum value</a>
+						<a id="query-apply-avg">Average value</a>
+						<a id="query-apply-count">Count unique instances of value</a>
+						<a id="query-apply-sum">Sum</a>
+					</div>
+				</div> 
+			</div>
+			<div id="add-dataset-input-kind-div" class="dataset-content-div">
+				<h3>My Groups</h3>
+				Here are the keys you chose that define the groups.
+				<br>
+				<br>
+				<table id="list-group-keys-table">
+					<thead> <tr>
+							<th>Group Keys</th>
+						</tr></thead>
+					<tbody id="list-group-keys-table-tbody">
+					</tbody>
+				</table>
+				<br>
+					<button id="query-clear-groups-button" class="button">Clear Groups</button>
+				<br>
+			</div>
+			<div id="add-dataset-input-kind-div" class="dataset-content-div">
+				<h3>My Aggregations</h3>
+				Here is a list of aggregations that you have created.
+				<br>
+				<br>
+				<table id="list-apply-rules-table">
+					<thead> 
+						<tr>
+							<th>New Key</th>
+							<th>Aggregator Function</th>
+							<th>Aggregator Argument</th>
+						</tr></thead>
+					<tbody id="list-apply-rules-table-tbody">
+					</tbody>
+				</table>
+				<br>
+					<button id="query-clear-apply-rules-button" class="button">Clear Aggregations</button>
+				<br>
+			</div>
+		</div>
+	</div>
+
+	<div class="dataset-div">
+		<h2>4. Set Options</h2>
+		<p>Further specify the data you want, and how it is presented.</p>
+		<div class="dataset-box">
+			<div id="add-dataset-input-id-div" class="dataset-content-div">
+				<h3>Set Columns For Output</h3>
+				Choose the columns that you want to see in the query response.
+				The columns are specified either by:
+				<ol>
+					<li>The ID of a dataset and a known field, e.g. "avg".</li>
+					<li>Any key you specify in the Transformations step.</li>
+				</ol>
+				If the format is not followed, the query will be invalid.
+				<br>
+				<br>
+				<input type="text" placeholder="Enter column field" id="input-add-column-key">
+			</div>
+			<div id="add-dataset-input-id-div" class="dataset-content-div">
+				<h3>Specify Order Of Output</h3>
+				Choose the order that you want the query response to be sorted by.
+				The order you add the columns in specifies the priority of the sorting.
+				In addition, you may choose the direction to sort the output by.
+				Again, the keys must satisfy the following conditions.
+				<ol>
+					<li>The ID of a dataset and a known field, e.g. "avg".</li>
+					<li>Any key you specify in the Transformations step.</li>
+				</ol>
+				<input type="text" placeholder="Enter order key" id="input-add-order-key">
+			</div>
+			<div id="query-sort-direction-div" class="dataset-content-div">
+				<h3>Sorting Direction</h3>
+				<h2 id="sort-direction-div">⬆️</h2>
+				<br>
+				<button class="button" id="toggle-sort-direction">Toggle Sort Direction</button>
+			</div>
+			<div id="add-dataset-input-kind-div" class="dataset-content-div">
+				<h3>My Columns</h3>
+				Here is a list of columns that you have chosen.
+				<br>
+				<br>
+				<table id="list-columns-table">
+					<thead> <tr>
+							<th>Columns</th>
+						</tr></thead>
+					<tbody id="list-columns-table-tbody">
+					</tbody>
+				</table>
+				<br>
+					<button id="query-clear-columns-button" class="button">Clear Columns</button>
+				<br>
+			</div>
+			<div id="add-dataset-input-kind-div" class="dataset-content-div">
+				<h3>Sorting Order</h3>
+				The list of keys that the query response will be sorted by.
+				They are listed in descending order of priority.
+				<br>
+				<br>
+				<table id="list-orders-table">
+					<thead> <tr>
+							<th>Order Keys</th>
+						</tr></thead>
+					<tbody id="list-orders-table-tbody">
+					</tbody>
+				</table>
+				<br>
+					<button id="query-clear-orders-button" class="button">Clear Sorting Order</button>
+				<br>
+			</div>
+		</div>
+	</div>
+
+
+
+	<h1>Now we can perform our query!</h1>
+
+	<div class="dataset-div">
+		<br>
+		<br>
+		<p>
+			Now with the options you chose, we can finally perform the query on the data.
+			Just press the button below!
+	 </p>
+		<div class="dataset-box">
+			<div id="perform-query-table-div" class="dataset-content-div">
+				<div id="perform-query-button-div">
+					<button id="perform-query-button" class="button" >Perform Query!</button>
+				</div>
+				<table id="perform-query-table">
+					<thead> 
+					</thead>
+					<tbody id="perform-query-table-tbody">
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+
+	<script type="text/javascript" src="/js/queries.js"></script>
+</body>
+</html>

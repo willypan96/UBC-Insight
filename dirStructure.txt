@@ -1,0 +1,21 @@
+src/
+  controller/
+    utils/
+      addDatasetUtils
+      removeDatasetUtils
+      performQueryUtils
+      listDatasetUtils
+    InsightFacade
+    IInsightFacade
+  model/
+    courseDataset/
+      CourseDataset implements InsightDataset
+      CourseSection
+    roomDataset/
+      RoomDataset implements InsightDataset
+      ...
+test/
+  controller/
+    InsightFacade.spec
+  resources/
+    ...

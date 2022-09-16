@@ -1,0 +1,115 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css" media="screen"/>
+	<title>Datasets - UBC Insight</title>
+</head>
+<body>
+
+	 <div class="navbar">
+		<a href="index.html">UBC Insight</a>
+		<a class="active" href="datasets.html">Datasets</a>
+		<a href="queries.html">Queries</a>
+	</div> 
+
+	<h1>Manage Datasets</h1>
+
+	<div class="dataset-div">
+		<h2>Add Dataset</h2>
+		<p>Here is where you are able to add a dataset to the system.</p>
+		<div class="dataset-box">
+			<div id="add-dataset-input-id-div" class="dataset-content-div">
+				<h3>1. Set Dataset ID</h3>
+				Here is where you specify the ID of the dataset you would like to add.
+				A valid dataset ID must satisfy the following conditions:
+				<ol>
+					<li>The ID must be non-empty.</li>
+					<li>The ID must be not entirely whitespace.</li>
+					<li>The ID must not contain an underscore ("_").</li>
+				</ol>
+				<input type="text" placeholder="Enter dataset ID" id="input-add-dataset-id">
+			</div>
+			<div id="add-dataset-input-kind-div" class="dataset-content-div">
+				<h3>2. Set Dataset Kind</h3>
+				Next, choose the dataset kind of your dataset. 
+				The dataset kind must be one of the following:
+				<ol>
+					<li>The kind must be "courses".</li>
+					<li>The kind must be "rooms".</li>
+				</ol>
+				<input type="text" placeholder="Enter dataset kind" id="input-add-dataset-kind">
+			</div>
+			<div id="add-dataset-input-zip-div" class="dataset-content-div">
+				<h3>3. Select Valid Dataset Zip</h3>
+				The dataset must be a valid .zip file,
+				and should contain data corresponding to the dataset kind selected above.
+				<br>
+				<br>
+				<input type="file" id="input-add-dataset-upload-zip" accept=".zip">
+			</div>
+			<div id="add-dataset-input-submit-div" class="dataset-content-div">
+				<h3>4. Now upload your dataset!</h3>
+				<button id="add-dataset-button" class="button" >Add dataset!</button>
+				<br>
+				<br>
+				If everything went to plan, 
+				you should receive an alert stating that your dataset has been added successfully!
+				Otherwise, an alert will state what went wrong.
+			</div>
+		</div>
+	</div>
+
+	<div class="dataset-div">
+		<h2>List Datasets</h2>
+		<p>Here is where you can see all of the current datasets added in the system.</p>
+		<div id="list-datasets-button-div">
+			<button id="list-datasets-button" class="button" >List datasets!</button>
+		</div>
+		<div class="dataset-box">
+			<div id="list-dataset-table-div" class="dataset-content-div">
+				<table id="list-datasets-table">
+					<thead> <tr>
+							<th>Dataset ID</th>
+							<th>Dataset Kind</th>
+							<th>Rows in Dataset</th>
+						</tr></thead>
+					<tbody id="list-datasets-table-tbody">
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<div class="dataset-div">
+		<h2>Remove Dataset</h2>
+		<p>This will remove the dataset with the specified ID from the system.</p>
+		<div class="dataset-box">
+			<div id="remove-dataset-input-div" class="dataset-content-div">
+				<h3>1. Set Dataset ID</h3>
+				Here is where you specify the ID of the dataset you would like to delete.
+				A valid dataset ID must satisfy the following conditions:
+				<ol>
+					<li>The ID must be non-empty.</li>
+					<li>The ID must be not entirely whitespace.</li>
+					<li>The ID must not contain an underscore ("_").</li>
+					<li><b>A dataset with the given ID must exist in the system.</b></li>
+				</ol>
+				<input type="text" placeholder="Type dataset id..." id="input-remove-dataset-id">
+			</div>
+			<div id="remove-dataset-button-div" class="dataset-content-div">
+				<h3>2. Remove Dataset</h3>
+				<button id="remove-dataset-button" class="button" >Remove dataset!</button>
+				<br>
+				<br>
+				If everything went to plan, 
+				you should receive an alert stating that your dataset has been removed successfully!
+				Otherwise, an alert will state what went wrong.
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="/js/datasets.js"></script>
+</body>
+</html>
